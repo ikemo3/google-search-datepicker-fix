@@ -42,4 +42,4 @@ function rewriteDate(ev: Event) {
 }
 
 const config = {childList: true, subtree: true};
-observer.observe(document.documentElement, config);
+observer.observe(document.documentElement!, config);
