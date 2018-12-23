@@ -13,7 +13,8 @@ const observer = new MutationObserver((mutations) => {
 
 function ymdToMdy(dateStr: string) {
     const firstSlash = dateStr.indexOf("/");
-    if (firstSlash === 2) {
+    const firstHyphen = dateStr.indexOf("-");
+    if (firstSlash !== 4 && firstHyphen !== 4) {
         // already MM/DD/YYYY
         return dateStr;
     }
