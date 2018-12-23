@@ -1,0 +1,8 @@
+{
+  "extensionDescription": {
+    "message": "Google検索の「期間を指定」にYYYY-MM-DD, YYYY/MM/DD形式の日付を使えるようにします。"
+  },
+  "extensionName": {
+    "message": "「期間を指定」の書式変更"
+  }
+}
