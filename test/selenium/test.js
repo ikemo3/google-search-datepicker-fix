@@ -1,6 +1,7 @@
 const {Builder, By, Capabilities} = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 const fs = require('fs');
+const assert = require('assert');
 
 const extension = fs.readFileSync("/tmp/workspace/google-search-datepicker.crx", "base64");
 const options = new chrome.Options()
@@ -17,7 +18,7 @@ capabilities.set('chromeOptions', {
 (async () => {
     const driver = await new Builder().withCapabilities(capabilities).setChromeOptions(options).build();
 
-    await driver.get('https://www.google.co.jp/search?q=test');
+    await driver.get('https://www.google.com/search?q=test');
 
     // click 'Tools'
     const tool = driver.findElement(By.linkText("ツール"));
@@ -40,6 +41,6 @@ capabilities.set('chromeOptions', {
     await driver.actions().pause(500).click(go_button).perform();
 
     // assert time range label.
-    const tsel = driver.findElement(By.className("hdtb-tsel"));
-    console.log(await tsel.getAttribute("aria-label"));
+    const time_range_label = driver.findElement(By.className("hdtb-tsel"));
+    assert.strictEqual(await time_range_label.getAttribute("aria-label"), "2019年1月2日 – 今日");
 })();
