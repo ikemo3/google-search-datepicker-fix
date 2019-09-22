@@ -19,6 +19,7 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "indent": ["error", 4]
+        "indent": ["error", 4],
+        "no-unused-vars": ["error", { "argsIgnorePattern":  "^_" }]
     }
 }

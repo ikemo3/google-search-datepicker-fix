@@ -18,7 +18,7 @@ function ymdToMdy(dateStr: string) {
     return `${month}/${date}/${year}`;
 }
 
-function rewriteDate(ev: Event) {
+function rewriteDate(_ev: Event) {
     const cdrMin = document.getElementById('cdr_min') as HTMLInputElement;
     const cdrMax = document.getElementById('cdr_max') as HTMLInputElement;
     if (cdrMin === null || cdrMax === null) {
