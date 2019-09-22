@@ -16,6 +16,10 @@ cd /tmp/workspace
 if [ "${CIRCLE_BRANCH}" != "" ]; then
   OPTIONS="-draft"
   TAG=${CIRCLE_BRANCH}
+
+  # rename assets
+  mv google-search-datepicker.crx google-search-datepicker-draft.crx
+  mv google-search-datepicker.zip google-search-datepicker-draft.zip
 elif [ "${CIRCLE_TAG}" != "" ]; then
   # verify tag == manifest version
   if [ "${CIRCLE_TAG}" != "v${MANIFEST_VERSION}" ]; then
