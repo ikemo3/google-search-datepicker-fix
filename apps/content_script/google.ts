@@ -2,9 +2,9 @@ const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
         for (const node of mutation.addedNodes) {
             if (node instanceof Element) {
-                const selectButton = node.querySelector(".cdr_go");
+                const selectButton = node.querySelector('.cdr_go');
                 if (selectButton !== null) {
-                    selectButton.addEventListener("click", rewriteDate);
+                    selectButton.addEventListener('click', rewriteDate);
                 }
             }
         }
@@ -12,8 +12,8 @@ const observer = new MutationObserver((mutations) => {
 });
 
 function ymdToMdy(dateStr: string) {
-    const firstSlash = dateStr.indexOf("/");
-    const firstHyphen = dateStr.indexOf("-");
+    const firstSlash = dateStr.indexOf('/');
+    const firstHyphen = dateStr.indexOf('-');
     if (firstSlash !== 4 && firstHyphen !== 4) {
         // already MM/DD/YYYY
         return dateStr;
@@ -32,8 +32,8 @@ function ymdToMdy(dateStr: string) {
 }
 
 function rewriteDate(ev: Event) {
-    const cdrMin = document.getElementById("cdr_min") as HTMLInputElement;
-    const cdrMax = document.getElementById("cdr_max") as HTMLInputElement;
+    const cdrMin = document.getElementById('cdr_min') as HTMLInputElement;
+    const cdrMax = document.getElementById('cdr_max') as HTMLInputElement;
     if (cdrMin === null || cdrMax === null) {
         return;
     }
@@ -42,5 +42,5 @@ function rewriteDate(ev: Event) {
     cdrMax.value = ymdToMdy(cdrMax.value);
 }
 
-const config = {childList: true, subtree: true};
+const config = { childList: true, subtree: true };
 observer.observe(document.documentElement!, config);

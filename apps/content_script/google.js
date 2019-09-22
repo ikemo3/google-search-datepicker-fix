@@ -3,17 +3,17 @@ const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
         for (const node of mutation.addedNodes) {
             if (node instanceof Element) {
-                const selectButton = node.querySelector(".cdr_go");
+                const selectButton = node.querySelector('.cdr_go');
                 if (selectButton !== null) {
-                    selectButton.addEventListener("click", rewriteDate);
+                    selectButton.addEventListener('click', rewriteDate);
                 }
             }
         }
     });
 });
 function ymdToMdy(dateStr) {
-    const firstSlash = dateStr.indexOf("/");
-    const firstHyphen = dateStr.indexOf("-");
+    const firstSlash = dateStr.indexOf('/');
+    const firstHyphen = dateStr.indexOf('-');
     if (firstSlash !== 4 && firstHyphen !== 4) {
         // already MM/DD/YYYY
         return dateStr;
@@ -29,8 +29,8 @@ function ymdToMdy(dateStr) {
     return `${month}/${date}/${year}`;
 }
 function rewriteDate(ev) {
-    const cdrMin = document.getElementById("cdr_min");
-    const cdrMax = document.getElementById("cdr_max");
+    const cdrMin = document.getElementById('cdr_min');
+    const cdrMax = document.getElementById('cdr_max');
     if (cdrMin === null || cdrMax === null) {
         return;
     }
