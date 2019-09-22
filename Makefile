@@ -1,5 +1,6 @@
 ci:
 	yarn install
+	yarn run tsc
 	yarn test
 
 	@echo "Archive google-search-datepicker.crx"
