@@ -42,5 +42,5 @@ function rewriteDate(ev: Event) {
     cdrMax.value = ymdToMdy(cdrMax.value);
 }
 
-const config = {childList: true, subtree: true};
+const config = { childList: true, subtree: true };
 observer.observe(document.documentElement!, config);
