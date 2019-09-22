@@ -14,7 +14,7 @@ fi
 
 cd /tmp/workspace
 if [ "${CIRCLE_BRANCH}" != "" ]; then
-  OPTIONS="-draft"
+  OPTIONS="-draft -replace"
   TAG=${CIRCLE_BRANCH}
 
   # rename assets
@@ -29,14 +29,14 @@ elif [ "${CIRCLE_TAG}" != "" ]; then
     exit 1
   fi
 
-  OPTIONS=""
+  OPTIONS="--delete"
   TAG=${CIRCLE_TAG}
 
   # rename assets
   mv google-search-datepicker.crx google-search-datepicker-${MANIFEST_VERSION}.crx
   mv google-search-datepicker.zip google-search-datepicker-${MANIFEST_VERSION}.zip
 else
-  OPTIONS=""
+  OPTIONS="--delete"
   TAG=$(git symbolic-ref --short HEAD)
 fi
 
@@ -47,4 +47,4 @@ ${DO} ghr -t ${GITHUB_TOKEN} \
   -c ${SHA} \
   -n "" \
   ${OPTIONS} \
-  -delete ${TAG} /tmp/workspace/
+  ${TAG} /tmp/workspace/
