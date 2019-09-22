@@ -1,8 +1,9 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 
 cd $(dirname $0)/..
 REPOSITORY_TOP=$(pwd)
 
+NOW=$(date +'%Y-%m-%d-%H-%M-%S')
 MANIFEST_VERSION=$(jq -r .version apps/manifest.json)
 SHA=$(git rev-parse HEAD)
 
@@ -14,13 +15,18 @@ fi
 
 cd /tmp/workspace
 if [ "${CIRCLE_BRANCH}" != "" ]; then
-  OPTIONS="-draft"
-  TAG=${CIRCLE_BRANCH}
+  OPTIONS="-prerelease -recreate"
+  TAG=snapshot
 
   # rename assets
   mv google-search-datepicker.crx google-search-datepicker-draft.crx
   mv google-search-datepicker.zip google-search-datepicker-draft.zip
 elif [ "${CIRCLE_TAG}" != "" ]; then
+  if [ "${CIRCLE_TAG}" = "snapshot" ]; then
+    echo 'ignore `snapshot` tag (already released)'
+    exit 0
+  fi
+
   # verify tag == manifest version
   if [ "${CIRCLE_TAG}" != "v${MANIFEST_VERSION}" ]; then
     echo "tag != 'v' + manifest_version"
@@ -29,22 +35,18 @@ elif [ "${CIRCLE_TAG}" != "" ]; then
     exit 1
   fi
 
-  OPTIONS=""
+  OPTIONS="-recreate"
   TAG=${CIRCLE_TAG}
 
   # rename assets
   mv google-search-datepicker.crx google-search-datepicker-${MANIFEST_VERSION}.crx
   mv google-search-datepicker.zip google-search-datepicker-${MANIFEST_VERSION}.zip
 else
-  OPTIONS=""
+  OPTIONS="-recreate"
   TAG=$(git symbolic-ref --short HEAD)
 fi
 
 ${DO} go get -u github.com/tcnksm/ghr
 
 cd ${REPOSITORY_TOP}
-${DO} ghr -t ${GITHUB_TOKEN} \
-  -c ${SHA} \
-  -n "" \
-  ${OPTIONS} \
-  -delete ${TAG} /tmp/workspace/
+${DO} ghr -t ${GITHUB_TOKEN} -c ${SHA} -n "" ${OPTIONS} ${TAG} /tmp/workspace/
