@@ -21,7 +21,6 @@ jobs:
           root: /tmp/workspace
           paths:
             - google-search-datepicker.*
-            - version
   deploy:
     docker:
       - image: circleci/golang:1.13
