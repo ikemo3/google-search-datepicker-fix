@@ -17,6 +17,7 @@ cd /tmp/workspace
 if [ "${CIRCLE_BRANCH}" != "" ]; then
   OPTIONS="-prerelease -recreate"
   TAG=snapshot
+  NAME="snapshot"
 
   # rename assets
   mv google-search-datepicker.crx google-search-datepicker-draft.crx
@@ -37,6 +38,7 @@ elif [ "${CIRCLE_TAG}" != "" ]; then
 
   OPTIONS="-recreate"
   TAG=${CIRCLE_TAG}
+  NAME=""
 
   # rename assets
   mv google-search-datepicker.crx google-search-datepicker-${MANIFEST_VERSION}.crx
@@ -44,9 +46,10 @@ elif [ "${CIRCLE_TAG}" != "" ]; then
 else
   OPTIONS="-recreate"
   TAG=$(git symbolic-ref --short HEAD)
+  NAME="snapshot"
 fi
 
 ${DO} go get -u github.com/tcnksm/ghr
 
 cd ${REPOSITORY_TOP}
-${DO} ghr -t ${GITHUB_TOKEN} -c ${SHA} -n "" ${OPTIONS} ${TAG} /tmp/workspace/
+${DO} ghr -t ${GITHUB_TOKEN} -c ${SHA} -n ${NAME} ${OPTIONS} ${TAG} /tmp/workspace/
