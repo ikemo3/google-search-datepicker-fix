@@ -26,9 +26,11 @@ elif [ "${CIRCLE_TAG}" != "" ]; then
   OPTIONS=""
   TAG=${CIRCLE_TAG}
 
-  # rename asset
+  # rename assets
   mv /tmp/workspace/google-search-datepicker.crx \
     /tmp/workspace/google-search-datepicker-${MANIFEST_VERSION}.crx
+  mv /tmp/workspace/google-search-datepicker.zip \
+    /tmp/workspace/google-search-datepicker-${MANIFEST_VERSION}.zip
 else
   OPTIONS=""
   TAG=$(git symbolic-ref --short HEAD)
