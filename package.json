@@ -6,7 +6,10 @@
   "devDependencies": {
     "@types/chrome": "0.0.76",
     "@types/jasmine": "^3.3.5",
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "@typescript-eslint/parser": "^2.3.0",
     "crx": "^5.0.1",
+    "eslint": "^6.4.0",
     "karma": "^4.2.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.2",
