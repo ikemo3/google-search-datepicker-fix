@@ -25,6 +25,6 @@
   "scripts": {
     "test": "karma start --single-run",
     "integration-test": "node --async-stack-traces test/selenium/test.js",
-    "archive-unsigned": "crx pack apps --zip-output $npm_package_name.zip"
+    "archive-unsigned": "tsc && crx pack apps --zip-output $npm_package_name.zip"
   }
 }
