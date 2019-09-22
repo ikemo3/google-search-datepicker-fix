@@ -1,6 +1,7 @@
 #!/bin/bash -e
 
 cd $(dirname $0)/..
+REPOSITORY_TOP=$(pwd)
 
 MANIFEST_VERSION=$(jq -r .version apps/manifest.json)
 SHA=$(git rev-parse HEAD)
@@ -11,6 +12,7 @@ else
   DO=echo
 fi
 
+cd /tmp/workspace
 if [ "${CIRCLE_BRANCH}" != "" ]; then
   OPTIONS="-draft"
   TAG=${CIRCLE_BRANCH}
@@ -27,16 +29,16 @@ elif [ "${CIRCLE_TAG}" != "" ]; then
   TAG=${CIRCLE_TAG}
 
   # rename assets
-  mv /tmp/workspace/google-search-datepicker.crx \
-    /tmp/workspace/google-search-datepicker-${MANIFEST_VERSION}.crx
-  mv /tmp/workspace/google-search-datepicker.zip \
-    /tmp/workspace/google-search-datepicker-${MANIFEST_VERSION}.zip
+  mv google-search-datepicker.crx google-search-datepicker-${MANIFEST_VERSION}.crx
+  mv google-search-datepicker.zip google-search-datepicker-${MANIFEST_VERSION}.zip
 else
   OPTIONS=""
   TAG=$(git symbolic-ref --short HEAD)
 fi
 
 ${DO} go get -u github.com/tcnksm/ghr
+
+cd ${REPOSITORY_TOP}
 ${DO} ghr -t ${GITHUB_TOKEN} \
   -c ${SHA} \
   -n "" \
