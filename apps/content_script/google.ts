@@ -1,13 +1,13 @@
 const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-        for (const node of mutation.addedNodes) {
+        mutation.addedNodes.forEach((node) => {
             if (node instanceof Element) {
                 const selectButton = node.querySelector('.cdr_go');
                 if (selectButton !== null) {
                     selectButton.addEventListener('click', rewriteDate);
                 }
             }
-        }
+        });
     });
 });
 
@@ -42,5 +42,5 @@ function rewriteDate(ev: Event) {
     cdrMax.value = ymdToMdy(cdrMax.value);
 }
 
-const config = { childList: true, subtree: true };
+const config = {childList: true, subtree: true};
 observer.observe(document.documentElement!, config);

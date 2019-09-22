@@ -1,14 +1,14 @@
 "use strict";
 const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
-        for (const node of mutation.addedNodes) {
+        mutation.addedNodes.forEach((node) => {
             if (node instanceof Element) {
                 const selectButton = node.querySelector('.cdr_go');
                 if (selectButton !== null) {
                     selectButton.addEventListener('click', rewriteDate);
                 }
             }
-        }
+        });
     });
 });
 function ymdToMdy(dateStr) {
