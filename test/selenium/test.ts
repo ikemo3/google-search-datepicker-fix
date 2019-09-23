@@ -1,21 +1,21 @@
-const {Builder, By, Capabilities} = require('selenium-webdriver');
-const chrome = require('selenium-webdriver/chrome');
-const fs = require('fs');
-const assert = require('assert');
-
-const extension = fs.readFileSync("/tmp/workspace/google-search-datepicker.crx", "base64");
-const options = new chrome.Options()
-    .addExtensions(extension)
-    .windowSize({width: 1280, height: 800});
-
-const capabilities = Capabilities.chrome();
-capabilities.set('chromeOptions', {
-    args: [
-        '--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
-    ]
-});
-
 (async () => {
+    const {Builder, By, Capabilities} = require('selenium-webdriver');
+    const chrome = require('selenium-webdriver/chrome');
+    const fs = require('fs');
+    const assert = require('assert');
+
+    const extension = fs.readFileSync("/tmp/workspace/google-search-datepicker.crx", "base64");
+    const options = new chrome.Options()
+        .addExtensions(extension)
+        .windowSize({width: 1280, height: 800});
+
+    const capabilities = Capabilities.chrome();
+    capabilities.set('chromeOptions', {
+        args: [
+            '--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36',
+        ]
+    });
+
     const driver = await new Builder().withCapabilities(capabilities).setChromeOptions(options).build();
 
     await driver.get('https://www.google.com/search?q=test');
