@@ -52,4 +52,4 @@ fi
 ${DO} go get -u github.com/tcnksm/ghr
 
 cd ${REPOSITORY_TOP}
-${DO} ghr -t ${GITHUB_TOKEN} -c ${SHA} -n ${NAME} ${OPTIONS} ${TAG} /tmp/workspace/
+${DO} ghr -c ${SHA} -n ${NAME} ${OPTIONS} ${TAG} /tmp/workspace/
