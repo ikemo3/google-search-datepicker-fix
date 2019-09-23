@@ -23,6 +23,7 @@
     "typescript": "^3.2.2"
   },
   "scripts": {
+    "lint": "yarn eslint --ext .ts apps",
     "test": "karma start --single-run",
     "integration-test": "node --async-stack-traces test/selenium/test.js",
     "archive-unsigned": "tsc && crx pack apps --zip-output $npm_package_name.zip"
