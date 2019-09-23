@@ -1,25 +1,36 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "extends": [
-        "airbnb-base"
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jasmine": true
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:jasmine/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "jasmine"
+  ],
+  "rules": {
+    "indent": [
+      "error",
+      4
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "indent": ["error", 4],
-        "no-unused-vars": ["error", { "argsIgnorePattern":  "^_" }]
-    }
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
 }
