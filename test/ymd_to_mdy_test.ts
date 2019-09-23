@@ -1,3 +1,4 @@
+/* global ymdToMdy */
 describe('ymdToMdy', () => {
     it('yyyy-mm-dd', () => {
         expect(ymdToMdy('2016-01-02')).toBe('01/02/2016');
