@@ -43,4 +43,7 @@ capabilities.set('chromeOptions', {
     // assert time range label.
     const time_range_label = driver.findElement(By.className("hdtb-tsel"));
     assert.strictEqual(await time_range_label.getAttribute("aria-label"), "2019年1月2日 – 今日");
+
+    // quit driver.
+    await driver.close();
 })();
