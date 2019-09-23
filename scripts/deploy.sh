@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -e
 
 cd $(dirname $0)/..
 REPOSITORY_TOP=$(pwd)
@@ -20,8 +20,8 @@ if [ "${CIRCLE_BRANCH}" != "" ]; then
   NAME="snapshot"
 
   # rename assets
-  mv google-search-datepicker.crx google-search-datepicker-draft.crx
-  mv google-search-datepicker.zip google-search-datepicker-draft.zip
+  mv google-search-datepicker.crx google-search-datepicker-snapshot.crx
+  mv google-search-datepicker.zip google-search-datepicker-snapshot.zip
 elif [ "${CIRCLE_TAG}" != "" ]; then
   if [ "${CIRCLE_TAG}" = "snapshot" ]; then
     echo 'ignore `snapshot` tag (already released)'
@@ -52,4 +52,4 @@ fi
 ${DO} go get -u github.com/tcnksm/ghr
 
 cd ${REPOSITORY_TOP}
-${DO} ghr -t ${GITHUB_TOKEN} -c ${SHA} -n ${NAME} ${OPTIONS} ${TAG} /tmp/workspace/
+${DO} ghr -c ${SHA} -n ${NAME} ${OPTIONS} ${TAG} /tmp/workspace/
