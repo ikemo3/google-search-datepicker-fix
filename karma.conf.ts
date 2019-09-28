@@ -12,7 +12,7 @@ module.exports = (config: Config) => {
             'apps/content_script/google.js': ['coverage'],
         },
         reporters: ['mocha', 'coverage'],
-        browsers: ['ChromeHeadless'],
+        browsers: ['ChromeHeadless', 'FirefoxHeadless'],
         logLevel: config.LOG_INFO,
     });
 };
