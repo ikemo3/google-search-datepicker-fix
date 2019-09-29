@@ -63,6 +63,7 @@ elif [ "${CIRCLE_TAG}" != "" ]; then
   mv ${PACKAGE_NAME}.crx ${PACKAGE_NAME}-${MANIFEST_VERSION}.crx
   mv ${PACKAGE_NAME}.zip ${PACKAGE_NAME}-${MANIFEST_VERSION}.zip
 else
+  cd ${REPOSITORY_TOP}
   OPTIONS="-recreate"
   TAG=$(git symbolic-ref --short HEAD)
   NAME="snapshot"
