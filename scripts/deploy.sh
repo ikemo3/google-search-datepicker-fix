@@ -5,6 +5,7 @@ REPOSITORY_TOP=$(pwd)
 
 NOW=$(date +'%Y-%m-%d-%H-%M-%S')
 MANIFEST_VERSION=$(jq -r .version apps/manifest.json)
+PACKAGE_VERSION=$(jq -r .version package.json)
 SHA=$(git rev-parse HEAD)
 
 if [ "${CI}" = "true" ]; then
@@ -33,6 +34,14 @@ elif [ "${CIRCLE_TAG}" != "" ]; then
     echo "tag != 'v' + manifest_version"
     echo "tag: ${CIRCLE_TAG}"
     echo "manifest: ${MANIFEST_VERSION}"
+    exit 1
+  fi
+
+  # verify manifest version == package version
+  if [ "${MANIFEST_VERSION}" != "${PACKAGE_VERSION}" ]; then
+    echo "manifest_version != package_version"
+    echo "manifest: ${MANIFEST_VERSION}"
+    echo "package : ${PACKAGE_VERSION}"
     exit 1
   fi
 
