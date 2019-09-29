@@ -4,9 +4,16 @@ cd $(dirname $0)/..
 REPOSITORY_TOP=$(pwd)
 
 NOW=$(date +'%Y-%m-%d-%H-%M-%S')
-MANIFEST_VERSION=$(jq -r .version apps/manifest.json)
+echo "NOW: ${NOW}"
+
 PACKAGE_VERSION=$(jq -r .version package.json)
+echo "PACKAGE_VERSION: ${PACKAGE_VERSION}"
+
+MANIFEST_VERSION=$(jq -r .version apps/manifest.json)
+echo "MANIFEST_VERSION: ${MANIFEST_VERSION}"
+
 SHA=$(git rev-parse HEAD)
+echo "SHA: ${SHA}"
 
 if [ "${CI}" = "true" ]; then
   DO=
