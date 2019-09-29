@@ -20,6 +20,7 @@
     "karma": "^4.2.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.2",
+    "karma-firefox-launcher": "^1.2.0",
     "karma-jasmine": "^2.0.1",
     "karma-mocha-reporter": "^2.2.5",
     "selenium-webdriver": "^4.0.0-alpha.4",
@@ -30,8 +31,5 @@
     "test": "karma start --single-run",
     "integration-test": "tsc && node --async-stack-traces test/selenium/test.js",
     "archive-unsigned": "tsc && crx pack apps --zip-output $npm_package_name.zip"
-  },
-  "dependencies": {
-    "karma-firefox-launcher": "^1.2.0"
   }
 }
