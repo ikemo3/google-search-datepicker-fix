@@ -6,6 +6,9 @@ REPOSITORY_TOP=$(pwd)
 NOW=$(date +'%Y-%m-%d-%H-%M-%S')
 echo "NOW: ${NOW}"
 
+PACKAGE_NAME=$(jq -r .name package.json)
+echo "PACKAGE_NAME: ${PACKAGE_NAME}"
+
 PACKAGE_VERSION=$(jq -r .version package.json)
 echo "PACKAGE_VERSION: ${PACKAGE_VERSION}"
 
@@ -28,8 +31,8 @@ if [ "${CIRCLE_BRANCH}" != "" ]; then
   NAME="snapshot"
 
   # rename assets
-  mv google-search-datepicker.crx google-search-datepicker-snapshot.crx
-  mv google-search-datepicker.zip google-search-datepicker-snapshot.zip
+  mv ${PACKAGE_NAME}.crx ${PACKAGE_NAME}-snapshot.crx
+  mv ${PACKAGE_NAME}.zip ${PACKAGE_NAME}-snapshot.zip
 elif [ "${CIRCLE_TAG}" != "" ]; then
   if [ "${CIRCLE_TAG}" = "snapshot" ]; then
     echo 'ignore `snapshot` tag (already released)'
@@ -57,8 +60,8 @@ elif [ "${CIRCLE_TAG}" != "" ]; then
   NAME=""
 
   # rename assets
-  mv google-search-datepicker.crx google-search-datepicker-${MANIFEST_VERSION}.crx
-  mv google-search-datepicker.zip google-search-datepicker-${MANIFEST_VERSION}.zip
+  mv ${PACKAGE_NAME}.crx ${PACKAGE_NAME}-${MANIFEST_VERSION}.crx
+  mv ${PACKAGE_NAME}.zip ${PACKAGE_NAME}-${MANIFEST_VERSION}.zip
 else
   OPTIONS="-recreate"
   TAG=$(git symbolic-ref --short HEAD)
