@@ -55,6 +55,9 @@ elif [ "${CIRCLE_TAG}" != "" ]; then
     exit 1
   fi
 
+  echo 'verify version_name does not exist'
+  jq -e .version_name apps/manifest.json
+
   OPTIONS="-recreate"
   TAG=${CIRCLE_TAG}
   NAME=""
