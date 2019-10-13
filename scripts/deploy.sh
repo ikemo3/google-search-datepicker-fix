@@ -3,9 +3,6 @@
 cd $(dirname $0)/..
 REPOSITORY_TOP=$(pwd)
 
-NOW=$(date +'%Y-%m-%d-%H-%M-%S')
-echo "NOW: ${NOW}"
-
 PACKAGE_NAME=$(jq -r .name package.json)
 echo "PACKAGE_NAME: ${PACKAGE_NAME}"
 
