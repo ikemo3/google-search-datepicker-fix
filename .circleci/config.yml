@@ -43,14 +43,14 @@ workflows:
             tags:
               only: /.*/
       - deploy:
+          requires:
+            - build
           filters:
             branches:
               only:
                 - master
             tags:
               only: /.*/
-          requires:
-            - build
   daily_workflow:
     triggers:
       - schedule:
