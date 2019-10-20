@@ -18,7 +18,7 @@ jobs:
       - run:
           command: make ci
       - persist_to_workspace:
-          root: /tmp/workspace
+          root: tmp/workspace
           paths:
             - google-search-datepicker.*
   deploy:
@@ -30,7 +30,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: /tmp/workspace
+          at: tmp/workspace
       - run:
           command: make deploy
 

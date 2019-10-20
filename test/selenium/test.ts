@@ -4,7 +4,7 @@ const fs = require('fs');
 const assert = require('assert');
 
 (async () => {
-    const extension = fs.readFileSync('/tmp/workspace/google-search-datepicker.crx', 'base64');
+    const extension = fs.readFileSync('tmp/workspace/google-search-datepicker.crx', 'base64');
     const options = new chromeDriver.Options()
         .addExtensions(extension)
         .windowSize({ width: 1280, height: 800 });
