@@ -32,6 +32,7 @@ jobs:
       - attach_workspace:
           at: tmp/workspace
       - run:
+          name: "Publish Release on GitHub"
           command: make deploy
 
 workflows:
