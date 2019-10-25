@@ -1,11 +1,11 @@
-const { Builder, By, Capabilities } = require('selenium-webdriver');
-const chromeDriver = require('selenium-webdriver/chrome');
-const fs = require('fs');
-const assert = require('assert');
+import { Builder, By, Capabilities } from 'selenium-webdriver';
+import { Options } from 'selenium-webdriver/chrome';
+import { readFileSync } from 'fs';
+import { strictEqual } from 'assert';
 
-(async () => {
-    const extension = fs.readFileSync('tmp/workspace/google-search-datepicker.crx', 'base64');
-    const options = new chromeDriver.Options()
+(async (): Promise<void> => {
+    const extension = readFileSync('tmp/workspace/google-search-datepicker.crx', 'base64');
+    const options = new Options()
         .addExtensions(extension)
         .windowSize({ width: 1280, height: 800 });
 
@@ -46,7 +46,7 @@ const assert = require('assert');
 
     // assert time range label.
     const timeRangeLabel = driver.findElement(By.className('hdtb-tsel'));
-    assert.strictEqual(await timeRangeLabel.getAttribute('aria-label'), '2019年1月2日 – 今日');
+    strictEqual(await timeRangeLabel.getAttribute('aria-label'), '2019年1月2日 – 今日');
 
     // quit driver.
     await driver.close();
