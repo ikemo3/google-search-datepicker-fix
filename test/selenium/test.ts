@@ -1,4 +1,4 @@
-import { By, WebDriver } from 'selenium-webdriver';
+import { By, until, WebDriver } from 'selenium-webdriver';
 import { strictEqual } from 'assert';
 import chromeDriver from './chrome';
 
@@ -25,9 +25,10 @@ async function main(driver: WebDriver) {
     // click 'Go'
     const goButton = driver.findElement(By.css("#cdr_frm input[value='選択']"));
     await driver.actions().pause(500).click(goButton).perform();
+    await driver.wait(until.stalenessOf(goButton));
 
     // assert time range label.
-    const timeRangeLabel = driver.findElement(By.className('hdtb-tsel'));
+    const timeRangeLabel = driver.wait(until.elementLocated(By.className('hdtb-tsel')));
     strictEqual(await timeRangeLabel.getAttribute('aria-label'), '2019年1月2日 – 今日');
 
     // quit driver.
