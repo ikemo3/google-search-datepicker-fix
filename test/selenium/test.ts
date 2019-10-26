@@ -1,11 +1,8 @@
-import { By } from 'selenium-webdriver';
+import { By, WebDriver } from 'selenium-webdriver';
 import { strictEqual } from 'assert';
 import chromeDriver from './chrome';
 
-(async (): Promise<void> => {
-    try {
-        const driver = chromeDriver();
-
+async function main(driver: WebDriver) {
         await driver.get('https://www.google.com/search?q=test');
 
         // click 'Tools'
@@ -35,6 +32,11 @@ import chromeDriver from './chrome';
 
         // quit driver.
         await driver.close();
+}
+
+(async (): Promise<void> => {
+    try {
+        await main(chromeDriver());
     } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e);
