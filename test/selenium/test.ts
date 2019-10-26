@@ -4,6 +4,7 @@ import {
 import { strictEqual } from 'assert';
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import chromeDriver from './chrome';
+import firefoxDriver from './firefox';
 
 async function takeScreenShot(driver: WebDriver, path: string): Promise<void> {
     const capabilities: Capabilities = await driver.getCapabilities();
@@ -47,6 +48,7 @@ async function main(driver: WebDriver) {
     // assert time range label.
     const timeRangeLabel = driver.wait(until.elementLocated(By.className('hdtb-tsel')));
     driver.wait(until.elementIsVisible(timeRangeLabel));
+    await driver.sleep(500);
     await takeScreenShot(driver, 'search_result_with_custom_range.png');
     strictEqual(await timeRangeLabel.getAttribute('aria-label'), '2019年1月2日 – 今日');
 
@@ -57,6 +59,16 @@ async function main(driver: WebDriver) {
 (async (): Promise<void> => {
     try {
         await main(chromeDriver());
+    } catch (e) {
+        // eslint-disable-next-line no-console
+        console.error(e);
+        process.exitCode = 1;
+    }
+})();
+
+(async (): Promise<void> => {
+    try {
+        await main(firefoxDriver());
     } catch (e) {
         // eslint-disable-next-line no-console
         console.error(e);
