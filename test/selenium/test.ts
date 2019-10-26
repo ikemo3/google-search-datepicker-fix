@@ -1,9 +1,26 @@
-import { By, until, WebDriver } from 'selenium-webdriver';
+import {
+    By, Capabilities, until, WebDriver,
+} from 'selenium-webdriver';
 import { strictEqual } from 'assert';
+import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import chromeDriver from './chrome';
+
+async function takeScreenShot(driver: WebDriver, path: string): Promise<void> {
+    const capabilities: Capabilities = await driver.getCapabilities();
+    const browserName = capabilities.get('browserName');
+
+    const dir = `tmp/screenshots/${browserName}`;
+
+    if (!existsSync(dir)) {
+        mkdirSync(dir, { recursive: true });
+    }
+
+    writeFileSync(`${dir}/${path}`, Buffer.from(await driver.takeScreenshot(), 'base64'));
+}
 
 async function main(driver: WebDriver) {
     await driver.get('https://www.google.com/search?q=test');
+    await takeScreenShot(driver, 'search_result.png');
 
     // click 'Tools'
     const tool = driver.findElement(By.linkText('ツール'));
@@ -30,6 +47,7 @@ async function main(driver: WebDriver) {
     // assert time range label.
     const timeRangeLabel = driver.wait(until.elementLocated(By.className('hdtb-tsel')));
     driver.wait(until.elementIsVisible(timeRangeLabel));
+    await takeScreenShot(driver, 'search_result_with_custom_range.png');
     strictEqual(await timeRangeLabel.getAttribute('aria-label'), '2019年1月2日 – 今日');
 
     // quit driver.
