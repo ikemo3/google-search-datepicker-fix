@@ -16,6 +16,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: "Install Japanese font"
+          command: sudo apt install -y fonts-takao-gothic
+      - run:
           command: make ci
       - persist_to_workspace:
           root: tmp/workspace
