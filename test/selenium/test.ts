@@ -29,6 +29,7 @@ async function main(driver: WebDriver) {
 
     // assert time range label.
     const timeRangeLabel = driver.wait(until.elementLocated(By.className('hdtb-tsel')));
+    driver.wait(until.elementIsVisible(timeRangeLabel));
     strictEqual(await timeRangeLabel.getAttribute('aria-label'), '2019年1月2日 – 今日');
 
     // quit driver.
