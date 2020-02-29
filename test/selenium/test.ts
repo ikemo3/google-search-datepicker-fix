@@ -36,12 +36,13 @@ async function main(driver: WebDriver) {
     await driver.actions().pause(500).click(customRange).perform();
 
     // set 'From'
-    const cdrMin = driver.findElement(By.id('cdr_min'));
+    const cdrMin = driver.findElement(By.id('OouJcb'));
     await driver.actions().pause(500).click(cdrMin).sendKeys('2019/01/02')
         .perform();
+    await takeScreenShot(driver, 'input_from.png');
 
     // click 'Go'
-    const goButton = driver.findElement(By.css("#cdr_frm input[value='選択']"));
+    const goButton = driver.findElement(By.css(".T3kYXe input[value='選択']"));
     await driver.actions().pause(500).click(goButton).perform();
     await driver.wait(until.stalenessOf(goButton));
 
