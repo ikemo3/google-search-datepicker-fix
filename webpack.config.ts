@@ -10,7 +10,7 @@ const config: Configuration = {
     },
     output: {
         path: join(__dirname, 'dist'),
-        filename: '[name].js',
+        filename: 'content_script/[name].js',
     },
     module: {
         rules: [
