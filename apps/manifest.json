@@ -208,7 +208,7 @@
       ],
       "run_at": "document_start",
       "js": [
-        "content_script/google.js"
+        "google.js"
       ]
     }
   ]
