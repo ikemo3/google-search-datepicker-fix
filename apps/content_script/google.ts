@@ -19,8 +19,8 @@ function ymdToMdy(dateStr: string) {
 }
 
 function rewriteDate(_ev: Event) {
-    const cdrMin = document.getElementById('cdr_min') as HTMLInputElement;
-    const cdrMax = document.getElementById('cdr_max') as HTMLInputElement;
+    const cdrMin = document.getElementById('OouJcb') as HTMLInputElement;
+    const cdrMax = document.getElementById('rzG2be') as HTMLInputElement;
     if (cdrMin === null || cdrMax === null) {
         return;
     }
@@ -33,7 +33,7 @@ const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
         mutation.addedNodes.forEach((node) => {
             if (node instanceof Element) {
-                const selectButton = node.querySelector('.cdr_go');
+                const selectButton = node.querySelector('.Ru1Ao');
                 if (selectButton !== null) {
                     selectButton.addEventListener('click', rewriteDate);
                 }
