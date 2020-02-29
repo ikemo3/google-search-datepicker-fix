@@ -15,6 +15,7 @@ jobs:
 
     steps:
       - checkout
+      - run: chromedriver --version
       - run:
           name: "Install Japanese font"
           command: sudo apt install -y fonts-takao-gothic
