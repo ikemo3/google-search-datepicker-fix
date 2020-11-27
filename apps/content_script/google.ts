@@ -1,4 +1,4 @@
-function ymdToMdy(dateStr: string) {
+function ymdToMdy(dateStr: string): string {
     const firstSlash = dateStr.indexOf('/');
     const firstHyphen = dateStr.indexOf('-');
     if (firstSlash !== 4 && firstHyphen !== 4) {
@@ -18,7 +18,7 @@ function ymdToMdy(dateStr: string) {
     return `${month}/${date}/${year}`;
 }
 
-function rewriteDate(_ev: Event) {
+function rewriteDate(_ev: Event): void {
     const cdrMin = document.getElementById('OouJcb') as HTMLInputElement;
     const cdrMax = document.getElementById('rzG2be') as HTMLInputElement;
     if (cdrMin === null || cdrMax === null) {
@@ -29,6 +29,16 @@ function rewriteDate(_ev: Event) {
     cdrMax.value = ymdToMdy(cdrMax.value);
 }
 
+function onKeyDown(ev: Event): void {
+    switch ((ev as KeyboardEvent).key) {
+    case 'Enter':
+        rewriteDate(ev);
+        break;
+    default:
+        break;
+    }
+}
+
 const observer = new MutationObserver((mutations) => {
     mutations.forEach((mutation) => {
         mutation.addedNodes.forEach((node) => {
@@ -36,6 +46,16 @@ const observer = new MutationObserver((mutations) => {
                 const selectButton = node.querySelector('.Ru1Ao');
                 if (selectButton !== null) {
                     selectButton.addEventListener('click', rewriteDate);
+                }
+
+                const cdrMin = node.querySelector('#OouJcb');
+                if (cdrMin !== null) {
+                    cdrMin.addEventListener('keydown', onKeyDown);
+                }
+
+                const cdrMax = node.querySelector('#rzG2be');
+                if (cdrMax !== null) {
+                    cdrMax.addEventListener('keydown', onKeyDown);
                 }
             }
         });
