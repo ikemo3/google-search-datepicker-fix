@@ -22,24 +22,26 @@ const config: Configuration = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new CopyPlugin([
-            {
-                from: 'apps/manifest.json',
-                to: '',
-            },
-            {
-                from: 'apps/_locales',
-                to: '_locales',
-            },
-            {
-                from: 'apps/icons',
-                to: 'icons',
-            },
-            {
-                from: 'apps/.web-extension-id',
-                to: '',
-            },
-        ]),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: 'apps/manifest.json',
+                    to: '',
+                },
+                {
+                    from: 'apps/_locales',
+                    to: '_locales',
+                },
+                {
+                    from: 'apps/icons',
+                    to: 'icons',
+                },
+                {
+                    from: 'apps/.web-extension-id',
+                    to: '',
+                },
+            ],
+        }),
     ],
     devtool: 'source-map',
 };
