@@ -8,6 +8,8 @@ git checkout -- apps/manifest.json
 MANIFEST=$(cat apps/manifest.json)
 
 ### create Chrome Extension
+mkdir -p tmp/workspace
+
 # rewrite manifest.json
 if [[ "${CIRCLE_BRANCH}" != "" ]]; then
   echo 'add `version_name` to manifest.json'
