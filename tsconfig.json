@@ -4,7 +4,7 @@
         "module": "commonjs",
         "sourceMap": true,
         "strict": true,
-        "target": "es2017"
+        "target": "es2019"
     },
-    "exclude": ["node_modules"]
+    "exclude": ["dist", "node_modules", "webpack.config.ts"]
 }
