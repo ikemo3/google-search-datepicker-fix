@@ -3,4 +3,5 @@ dist
 dist-chrome
 dist-firefox
 venv
+**/*.js
 *.md

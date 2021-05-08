@@ -5,6 +5,7 @@ apps/**/*.js
 apps/**/*.js.map
 test/**/*.js
 test/**/*.js.map
+reports
 webpack.config.js
 webpack.config.js.map
 tmp
