@@ -1,7 +1,6 @@
 import { Configuration } from "webpack";
 import { join } from "path";
 import CopyPlugin from "copy-webpack-plugin";
-import { CleanWebpackPlugin } from "clean-webpack-plugin";
 
 const config: Configuration = {
     mode: "development",
@@ -11,6 +10,7 @@ const config: Configuration = {
     output: {
         path: join(__dirname, "dist"),
         filename: "content_script/[name].js",
+        clean: true,
     },
     module: {
         rules: [{ test: /\.ts$/, loader: "ts-loader" }],
@@ -19,25 +19,26 @@ const config: Configuration = {
         extensions: [".ts", ".js"],
     },
     plugins: [
-        new CleanWebpackPlugin(),
-        new CopyPlugin([
-            {
-                from: "apps/manifest.json",
-                to: "",
-            },
-            {
-                from: "apps/_locales",
-                to: "_locales",
-            },
-            {
-                from: "apps/icons",
-                to: "icons",
-            },
-            {
-                from: "apps/.web-extension-id",
-                to: "",
-            },
-        ]),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: "apps/manifest.json",
+                    to: "",
+                },
+                {
+                    from: "apps/_locales",
+                    to: "_locales",
+                },
+                {
+                    from: "apps/icons",
+                    to: "icons",
+                },
+                {
+                    from: "apps/.web-extension-id",
+                    to: "",
+                },
+            ],
+        }),
     ],
     devtool: "source-map",
 };
