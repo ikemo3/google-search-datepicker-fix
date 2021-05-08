@@ -2,7 +2,7 @@
 
 yarn install
 yarn run tsc
-yarn lint
+yarn lint:ci
 yarn test
 
 yarn archive

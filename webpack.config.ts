@@ -1,47 +1,45 @@
-import { Configuration } from 'webpack';
-import { join } from 'path';
-import CopyPlugin from 'copy-webpack-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import { Configuration } from "webpack";
+import { join } from "path";
+import CopyPlugin from "copy-webpack-plugin";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
 
 const config: Configuration = {
-    mode: 'development',
+    mode: "development",
     entry: {
-        google: join(__dirname, 'apps', 'content_script', 'google.ts'),
+        google: join(__dirname, "apps", "content_script", "google.ts"),
     },
     output: {
-        path: join(__dirname, 'dist'),
-        filename: 'content_script/[name].js',
+        path: join(__dirname, "dist"),
+        filename: "content_script/[name].js",
     },
     module: {
-        rules: [
-            { test: /\.ts$/, loader: 'ts-loader' },
-        ],
+        rules: [{ test: /\.ts$/, loader: "ts-loader" }],
     },
     resolve: {
-        extensions: ['.ts', '.js'],
+        extensions: [".ts", ".js"],
     },
     plugins: [
         new CleanWebpackPlugin(),
         new CopyPlugin([
             {
-                from: 'apps/manifest.json',
-                to: '',
+                from: "apps/manifest.json",
+                to: "",
             },
             {
-                from: 'apps/_locales',
-                to: '_locales',
+                from: "apps/_locales",
+                to: "_locales",
             },
             {
-                from: 'apps/icons',
-                to: 'icons',
+                from: "apps/icons",
+                to: "icons",
             },
             {
-                from: 'apps/.web-extension-id',
-                to: '',
+                from: "apps/.web-extension-id",
+                to: "",
             },
         ]),
     ],
-    devtool: 'source-map',
+    devtool: "source-map",
 };
 
 export default config;

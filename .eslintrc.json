@@ -1,48 +1,26 @@
 {
-  "env": {
-    "browser": true,
-    "es6": true,
-    "jasmine": true
-  },
-  "extends": [
-    "airbnb-base",
-    "plugin:jasmine/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
-  "plugins": [
-    "@typescript-eslint",
-    "jasmine"
-  ],
-  "rules": {
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": [
-          "webpack.config.ts",
-          "test/**/*.ts"
-        ],
-        "optionalDependencies": false
-      }
-    ],
-    "indent": [
-      "error",
-      4
-    ],
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      {
-        "argsIgnorePattern": "^_"
-      }
-    ]
-  }
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jasmine": true
+    },
+    "extends": ["plugin:jasmine/recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint", "jasmine"],
+    "rules": {
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ]
+    }
 }
