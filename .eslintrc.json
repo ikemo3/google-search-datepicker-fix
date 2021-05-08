@@ -2,9 +2,9 @@
     "env": {
         "browser": true,
         "es6": true,
-        "jasmine": true
+        "jest": true
     },
-    "extends": ["plugin:jasmine/recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+    "extends": ["plugin:@typescript-eslint/recommended", "prettier"],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -14,7 +14,7 @@
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
-    "plugins": ["@typescript-eslint", "jasmine"],
+    "plugins": ["@typescript-eslint"],
     "rules": {
         "@typescript-eslint/no-unused-vars": [
             "error",

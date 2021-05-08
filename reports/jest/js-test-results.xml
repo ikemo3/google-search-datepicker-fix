@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="8" failures="0" errors="0" time="2.711">
+  <testsuite name="ymdToMdy" errors="0" failures="0" skipped="0" timestamp="2021-05-08T13:52:18" time="0.656" tests="8">
+    <testcase classname="ymdToMdy-yyyy-mm-dd" name="ymdToMdy-yyyy-mm-dd" time="0.003">
+    </testcase>
+    <testcase classname="ymdToMdy-yyyy-m-dd" name="ymdToMdy-yyyy-m-dd" time="0">
+    </testcase>
+    <testcase classname="ymdToMdy-yyyy-mm-d" name="ymdToMdy-yyyy-mm-d" time="0.001">
+    </testcase>
+    <testcase classname="ymdToMdy-yyyy-m-d" name="ymdToMdy-yyyy-m-d" time="0.001">
+    </testcase>
+    <testcase classname="ymdToMdy-mm/dd/yyyy" name="ymdToMdy-mm/dd/yyyy" time="0">
+    </testcase>
+    <testcase classname="ymdToMdy-m/dd/yyyy" name="ymdToMdy-m/dd/yyyy" time="0.001">
+    </testcase>
+    <testcase classname="ymdToMdy-mm/d/yyyy" name="ymdToMdy-mm/d/yyyy" time="0">
+    </testcase>
+    <testcase classname="ymdToMdy-m/d/yyyy" name="ymdToMdy-m/d/yyyy" time="0.001">
+    </testcase>
+  </testsuite>
+</testsuites>

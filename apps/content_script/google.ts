@@ -1,4 +1,4 @@
-function ymdToMdy(dateStr: string): string {
+export function ymdToMdy(dateStr: string): string {
     const firstSlash = dateStr.indexOf("/");
     const firstHyphen = dateStr.indexOf("-");
     if (firstSlash !== 4 && firstHyphen !== 4) {
