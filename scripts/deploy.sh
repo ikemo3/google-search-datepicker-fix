@@ -28,7 +28,6 @@ if [[ "${CIRCLE_BRANCH}" != "" ]]; then
 
   # rename assets
   cd tmp/workspace
-  mv ${PACKAGE_NAME}.crx ${PACKAGE_NAME}-snapshot.crx
   mv ${PACKAGE_NAME}.zip ${PACKAGE_NAME}-snapshot.zip
   mv ${PACKAGE_NAME}.xpi ${PACKAGE_NAME}-snapshot.xpi
 elif [[ "${CIRCLE_TAG}" != "" ]]; then
@@ -62,7 +61,6 @@ elif [[ "${CIRCLE_TAG}" != "" ]]; then
 
   # rename assets
   cd tmp/workspace
-  mv ${PACKAGE_NAME}.crx ${PACKAGE_NAME}-${MANIFEST_VERSION}.crx
   mv ${PACKAGE_NAME}.zip ${PACKAGE_NAME}-${MANIFEST_VERSION}.zip
   mv ${PACKAGE_NAME}.xpi ${PACKAGE_NAME}-${MANIFEST_VERSION}.xpi
 else
