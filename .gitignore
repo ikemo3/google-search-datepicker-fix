@@ -1,7 +1,5 @@
 key.pem
 dist
-karma.conf.js
-karma.conf.js.map
 google-search-datepicker.zip
 apps/**/*.js
 apps/**/*.js.map

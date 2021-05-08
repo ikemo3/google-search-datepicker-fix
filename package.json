@@ -6,8 +6,7 @@
     "devDependencies": {
         "@types/chrome": "0.0.91",
         "@types/copy-webpack-plugin": "^5.0.0",
-        "@types/jasmine": "^3.4.4",
-        "@types/karma": "^3.0.3",
+        "@types/jest": "^26.0.23",
         "@types/node": "^12.11.2",
         "@types/selenium-webdriver": "^4.0.5",
         "@typescript-eslint/eslint-plugin": "^2.5.0",
@@ -17,18 +16,15 @@
         "crx": "^5.0.1",
         "eslint": "^6.5.1",
         "eslint-plugin-import": "^2.18.2",
-        "eslint-plugin-jasmine": "^2.10.1",
+        "eslint-plugin-jest": "^24.3.6",
         "eslint-plugin-node": "^10.0.0",
         "eslint-config-prettier": "^6.0.0",
         "eslint-plugin-promise": "^4.2.1",
-        "karma": "^4.4.1",
-        "karma-chrome-launcher": "^3.1.0",
-        "karma-coverage": "^2.0.1",
-        "karma-firefox-launcher": "^1.2.0",
-        "karma-jasmine": "^2.0.1",
-        "karma-mocha-reporter": "^2.2.5",
+        "jest": "^26.6.3",
+        "jest-junit": "^12.0.0",
         "prettier": "^2.2.1",
         "selenium-webdriver": "^4.0.0-alpha.5",
+        "ts-jest": "^26.5.6",
         "ts-loader": "^6.2.1",
         "ts-node": "^8.4.1",
         "typescript": "^3.6.4",
@@ -40,6 +36,6 @@
         "integration-test": "yarn archive && tsc && node --async-stack-traces test/selenium/test.js",
         "lint": "prettier --write .; yarn eslint --ext .ts apps test *.ts",
         "lint:ci": "prettier --check .; yarn eslint --ext .ts apps test *.ts",
-        "test": "karma start --single-run"
+        "test": "jest"
     }
 }
