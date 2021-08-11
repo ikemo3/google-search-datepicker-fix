@@ -53,6 +53,7 @@ workflows:
                       tags:
                           only: /.*/
             - deploy:
+                  context: GitHub
                   requires:
                       - build
                   filters:
