@@ -35,7 +35,6 @@
     },
     "scripts": {
         "archive": "./scripts/archive.sh",
-        "integration-test": "yarn archive && tsc && node --async-stack-traces test/selenium/test.js",
         "lint": "prettier --write .; yarn eslint --ext .ts apps test *.ts",
         "lint:ci": "prettier --check .; yarn eslint --ext .ts apps test *.ts",
         "test": "jest"
