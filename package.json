@@ -35,6 +35,7 @@
     },
     "scripts": {
         "archive": "./scripts/archive.sh",
+        "build": "webpack",
         "lint": "prettier --write .; yarn eslint --ext .ts apps test *.ts",
         "lint:ci": "prettier --check .; yarn eslint --ext .ts apps test *.ts",
         "test": "jest"
