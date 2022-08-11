@@ -1,6 +1,7 @@
 import { Configuration } from "webpack";
 import { join } from "path";
 import CopyPlugin from "copy-webpack-plugin";
+import { RunScriptWebpackPlugin } from "run-script-webpack-plugin";
 
 const config: Configuration = {
     mode: "development",
@@ -38,6 +39,9 @@ const config: Configuration = {
                     to: "",
                 },
             ],
+        }),
+        new RunScriptWebpackPlugin({
+            name: "../tools/make_manifest.mjs",
         }),
     ],
     devtool: "source-map",
