@@ -12,7 +12,7 @@
         "@types/selenium-webdriver": "^4.1.1",
         "@types/webpack": "^5.28.0",
         "@typescript-eslint/eslint-plugin": "^5.30.3",
-        "@typescript-eslint/parser": "^5.30.3",
+        "@typescript-eslint/parser": "^5.33.0",
         "copy-webpack-plugin": "^11.0.0",
         "crx": "^5.0.1",
         "eslint": "^8.19.0",
