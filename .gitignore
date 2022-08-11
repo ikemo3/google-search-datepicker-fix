@@ -1,5 +1,7 @@
 key.pem
 dist
+dist-chrome
+dist-firefox
 google-search-datepicker.zip
 apps/**/*.js
 apps/**/*.js.map
