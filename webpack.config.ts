@@ -1,7 +1,7 @@
 import { Configuration } from "webpack";
 import { join } from "path";
 import CopyPlugin from "copy-webpack-plugin";
-import { RunScriptWebpackPlugin } from "run-script-webpack-plugin";
+import WebpackShellPluginNext from "webpack-shell-plugin-next";
 
 const config: Configuration = {
     mode: "development",
@@ -40,8 +40,12 @@ const config: Configuration = {
                 },
             ],
         }),
-        new RunScriptWebpackPlugin({
-            name: "../tools/make_manifest.mjs",
+        new WebpackShellPluginNext({
+            onBuildExit: {
+                scripts: ["yarn manifest"],
+                blocking: true,
+                parallel: false,
+            },
         }),
     ],
     devtool: "source-map",

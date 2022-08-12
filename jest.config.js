@@ -1,8 +1,8 @@
 module.exports = {
     collectCoverage: true,
-    collectCoverageFrom: ["apps/**/*.ts", "test/**/*.ts", "tools/*.mjs"],
+    collectCoverageFrom: ["apps/**/*.ts", "test/**/*.ts"],
     coverageDirectory: "coverage",
-    moduleFileExtensions: ["ts", "js", "mjs"],
+    moduleFileExtensions: ["ts", "js"],
     reporters: [
         "default",
         [
@@ -19,7 +19,7 @@ module.exports = {
     ],
     roots: ["<rootDir>/apps", "<rootDir>/test"],
     testEnvironment: "jest-environment-jsdom",
-    testMatch: ["<rootDir>/test/*.test.ts", "<rootDir>/test/*.test.mjs"],
+    testMatch: ["<rootDir>/test/*.test.ts"],
     transform: {
         ".*.ts$": "ts-jest",
     },

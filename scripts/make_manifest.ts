@@ -1,9 +1,6 @@
 import path from "path";
-import url from "url";
 import { mkdirSync, existsSync, readFileSync, writeFileSync } from "fs";
 import { format } from "date-fns";
-
-const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 
 // Create if there is no dist directory
 const projectDir = path.dirname(__dirname);

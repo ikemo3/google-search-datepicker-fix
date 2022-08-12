@@ -1,6 +1,27 @@
 import { execSync } from "child_process";
 
-export function configureGhrOption(branch, tag, manifestVersion, manifestVersionName, packageVersion) {
+export type NormalOption = {
+    name: string;
+    tag: string;
+    ghrOptions: string[];
+};
+
+export type ErrorOption = {
+    message: string;
+    exitCode: number;
+};
+
+export function isError(option: NormalOption | ErrorOption): option is ErrorOption {
+    return "message" in option;
+}
+
+export function configureGhrOption(
+    branch: string | undefined,
+    tag: string | undefined,
+    manifestVersion: string,
+    manifestVersionName: string,
+    packageVersion: string
+): NormalOption | ErrorOption {
     if (branch) {
         const ghrOptions = ["-prerelease", "-recreate"];
         let optionName;
