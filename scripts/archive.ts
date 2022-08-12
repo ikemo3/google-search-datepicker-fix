@@ -1,33 +1,32 @@
 import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "fs";
 import path from "path";
-import url from "url";
 import { execSync } from "child_process";
 import { zip } from "zip-a-folder";
 
-function clearDirectory(path) {
+function clearDirectory(path: string) {
     if (existsSync(path)) {
         rmSync(path, { recursive: true });
     }
 }
 
-function getPackageName(projectDir) {
+function getPackageName(projectDir: string) {
     const packageJsonPath = projectDir + "/package.json";
     const packageJson = JSON.parse(readFileSync(packageJsonPath).toString());
     return packageJson.name;
 }
 
-function getExtensionId(projectDir) {
+function getExtensionId(projectDir: string) {
     const extensionIdPath = projectDir + "/apps/.web-extension-id";
     const webExtensionId = readFileSync(extensionIdPath).toString();
     return webExtensionId.split("\n")[2];
 }
 
-async function createChromeExtension(packageName, projectDir) {
+async function createChromeExtension(packageName: string, projectDir: string) {
     console.log(`Create ${packageName}.zip`);
     await zip(projectDir + "/dist-chrome", projectDir + `/tmp/workspace/${packageName}-chrome.zip`);
 }
 
-async function createFirefoxExtension(packageName, projectDir) {
+async function createFirefoxExtension(packageName: string, projectDir: string) {
     // load manifest.json
     const extensionId = getExtensionId(projectDir);
     console.log(`Extension ID: ${extensionId}`);
@@ -45,8 +44,6 @@ async function createFirefoxExtension(packageName, projectDir) {
 }
 
 async function main() {
-    const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
-
     // create if there is no dist directory
     const projectDir = path.dirname(__dirname);
     clearDirectory(projectDir + "/dist-chrome");
@@ -71,4 +68,7 @@ async function main() {
     await createFirefoxExtension(packageName, projectDir);
 }
 
-await main();
+main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+});

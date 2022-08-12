@@ -1,40 +1,38 @@
 import { execSync, spawnSync } from "child_process";
 import { readFileSync, renameSync } from "fs";
 import path from "path";
-import url from "url";
-import { configureGhrOption } from "./libs.mjs";
+import { isError, configureGhrOption } from "./libs";
 
 function getGitSha() {
     const sha = execSync("git rev-parse HEAD");
     return sha.toString().trim();
 }
 
-function getManifestVersion(projectDir) {
+function getManifestVersion(projectDir: string) {
     const manifestJsonPath = projectDir + "/apps/manifest.json";
     const manifestJson = JSON.parse(readFileSync(manifestJsonPath).toString());
     return manifestJson.version;
 }
 
-function getManifestVersionName(projectDir) {
+function getManifestVersionName(projectDir: string) {
     const manifestJsonPath = projectDir + "/apps/manifest.json";
     const manifestJson = JSON.parse(readFileSync(manifestJsonPath).toString());
     return manifestJson.version_name;
 }
 
-function getPackageVersion(projectDir) {
+function getPackageVersion(projectDir: string) {
     const packageJsonPath = projectDir + "/package.json";
     const packageJson = JSON.parse(readFileSync(packageJsonPath).toString());
     return packageJson.version;
 }
 
-function getPackageName(projectDir) {
+function getPackageName(projectDir: string) {
     const packageJsonPath = projectDir + "/package.json";
     const packageJson = JSON.parse(readFileSync(packageJsonPath).toString());
     return packageJson.name;
 }
 
 function main() {
-    const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
     const projectDir = path.dirname(__dirname);
 
     const branch = process.env.CIRCLE_BRANCH;
@@ -44,7 +42,7 @@ function main() {
     const manifestVersionName = getManifestVersionName(projectDir);
 
     const config = configureGhrOption(branch, tag, manifestVersion, manifestVersionName, packageVersion);
-    if (config.message) {
+    if (isError(config)) {
         console.log(config.message);
         process.exit(config.exitCode);
     }

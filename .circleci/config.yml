@@ -46,6 +46,7 @@ jobs:
                       go get -u -v github.com/tcnksm/ghr
 
                       # deploy
+                      yarn install
                       export PATH=$PATH:~/go/bin
                       make deploy
 

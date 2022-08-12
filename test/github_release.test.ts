@@ -1,4 +1,4 @@
-import { configureGhrOption } from "../tools/libs.mjs";
+import { configureGhrOption, isError } from "../scripts/libs";
 
 describe("configureGhrOption", () => {
     test("master branch", () => {
@@ -51,5 +51,26 @@ describe("configureGhrOption", () => {
             message: "version_name exists",
             exitCode: 1,
         });
+    });
+});
+
+describe("isError", () => {
+    test("isNormal", () => {
+        expect(
+            isError({
+                tag: "snapshot",
+                name: "v1.0.0-snapshot",
+                ghrOptions: ["-prerelease", "-recreate"],
+            })
+        ).toStrictEqual(false);
+    });
+
+    test("isError", () => {
+        expect(
+            isError({
+                message: "version_name exists",
+                exitCode: 1,
+            })
+        ).toStrictEqual(true);
     });
 });
