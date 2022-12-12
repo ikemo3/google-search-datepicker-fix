@@ -4,7 +4,7 @@
     "author": "Hideki Ikemoto",
     "license": "MIT",
     "devDependencies": {
-        "@types/chrome": "0.0.203",
+        "@types/chrome": "0.0.204",
         "@types/copy-webpack-plugin": "^10.1.0",
         "@types/jest": "^28.1.7",
         "@types/node": "^18.11.12",
