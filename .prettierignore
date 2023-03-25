@@ -4,3 +4,4 @@ dist-chrome
 dist-firefox
 **/*.js
 *.md
+pnpm-lock.yaml
