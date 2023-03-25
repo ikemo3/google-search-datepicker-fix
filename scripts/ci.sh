@@ -1,9 +1,9 @@
 #!/bin/bash -eu
 
-yarn install
-yarn run tsc
-yarn lint:ci
-yarn test
+pnpm install
+pnpm run tsc
+pnpm lint:ci
+pnpm test
 
-yarn build
-yarn archive
+pnpm build
+pnpm archive
