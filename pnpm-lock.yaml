@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@types/chrome': 0.0.226
+  '@types/chrome': 0.0.227
   '@types/copy-webpack-plugin': ^10.1.0
   '@types/jest': ^29.0.0
   '@types/node': ^18.15.8
@@ -28,7 +28,7 @@ specifiers:
   zip-a-folder: 1.1.5
 
 devDependencies:
-  '@types/chrome': 0.0.226
+  '@types/chrome': 0.0.227
   '@types/copy-webpack-plugin': 10.1.0_webpack@5.76.3
   '@types/jest': 29.5.0
   '@types/node': 18.15.10
@@ -834,8 +834,8 @@ packages:
       '@babel/types': 7.21.3
     dev: true
 
-  /@types/chrome/0.0.226:
-    resolution: {integrity: sha512-cyl2Bt/P3xPH4arxHctNbzksO20hirQCL3Jcqz6mOZKgad7SkhqRqc7BL9EWVRvocs6hyo8bwkzKidTlM8WGUw==}
+  /@types/chrome/0.0.227:
+    resolution: {integrity: sha512-l1sVnf/1wZ/oNPw5X7OJMZjQlqVf3tPO50aE/aETHQRbrYhlHZkwv7lcuOWCimRSkFdHvAW4M+RIBAZACblXng==}
     dependencies:
       '@types/filesystem': 0.0.32
       '@types/har-format': 1.2.10
