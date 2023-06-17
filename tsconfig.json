@@ -1,10 +1,10 @@
 {
-    "compilerOptions": {
-        "esModuleInterop": true,
-        "module": "commonjs",
-        "sourceMap": true,
-        "strict": true,
-        "target": "es2019"
-    },
-    "exclude": ["dist", "node_modules", "webpack.config.ts"]
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2019"
+  },
+  "exclude": ["dist", "node_modules", "webpack.config.ts"]
 }
