@@ -42,5 +42,5 @@
     "test:ci": "jest --ci --runInBand",
     "tsc": "tsc"
   },
-  "packageManager": "pnpm@8.6.5"
+  "packageManager": "pnpm@8.6.6"
 }
