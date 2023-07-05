@@ -33,7 +33,7 @@ async function createChromeExtension(packageName: string, projectDir: string) {
   console.log(`Create ${packageName}.zip`);
   await zip(
     projectDir + "/dist-chrome",
-    projectDir + `/tmp/workspace/${packageName}-chrome.zip`
+    projectDir + `/tmp/workspace/${packageName}-chrome.zip`,
   );
 }
 
@@ -53,7 +53,7 @@ async function createFirefoxExtension(packageName: string, projectDir: string) {
   // create Firefox extension(xpi)
   await zip(
     projectDir + "/dist-firefox",
-    projectDir + `/tmp/workspace/${packageName}-firefox.xpi`
+    projectDir + `/tmp/workspace/${packageName}-firefox.xpi`,
   );
 }
 
@@ -76,7 +76,7 @@ async function main() {
   });
   copyFileSync(
     projectDir + "/apps/.web-extension-id",
-    projectDir + "/dist-firefox/.web-extension-id"
+    projectDir + "/dist-firefox/.web-extension-id",
   );
 
   // load package.json

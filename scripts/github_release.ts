@@ -46,7 +46,7 @@ function main() {
     tag,
     manifestVersion,
     manifestVersionName,
-    packageVersion
+    packageVersion,
   );
   if (isError(config)) {
     console.log(config.message);
@@ -57,11 +57,11 @@ function main() {
 
   renameSync(
     `tmp/workspace/${packageName}-chrome.zip`,
-    `tmp/workspace/${packageName}-${config.name}-chrome.zip`
+    `tmp/workspace/${packageName}-${config.name}-chrome.zip`,
   );
   renameSync(
     `tmp/workspace/${packageName}-firefox.xpi`,
-    `tmp/workspace/${packageName}-${config.name}-firefox.xpi`
+    `tmp/workspace/${packageName}-${config.name}-firefox.xpi`,
   );
 
   const args = [
