@@ -5,7 +5,9 @@
   "author": "Hideki Ikemoto",
   "scripts": {
     "archive": "ts-node scripts/archive.ts",
-    "build": "webpack",
+    "build": "pnpm build:manifest && pnpm build:webpack",
+    "build:manifest": "ts-node scripts/make_manifest.ts",
+    "build:webpack": "webpack",
     "deploy": "ts-node scripts/github_release.ts",
     "format": "pnpm format:prettier && pnpm format:sort-package-json",
     "format:check": "pnpm format:check:prettier && pnpm format:check:sort-package-json",
@@ -15,7 +17,6 @@
     "format:sort-package-json": "sort-package-json",
     "lint": "pnpm eslint --ext .ts apps test *.ts",
     "lint:ci": "pnpm format:check && pnpm eslint --format junit --output-file ./reports/eslint/eslint.xml --ext .ts apps test *.ts",
-    "manifest": "ts-node scripts/make_manifest.ts",
     "test": "jest",
     "test:ci": "jest --ci --runInBand",
     "tsc": "tsc"
@@ -45,7 +46,6 @@
     "typescript": "^5.1.6",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4",
-    "webpack-shell-plugin-next": "^2.3.1",
     "zip-a-folder": "2.0.0"
   },
   "packageManager": "pnpm@8.6.9"

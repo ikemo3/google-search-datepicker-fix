@@ -1,7 +1,6 @@
 import { Configuration } from "webpack";
 import { join } from "path";
 import CopyPlugin from "copy-webpack-plugin";
-import WebpackShellPluginNext from "webpack-shell-plugin-next";
 
 const config: Configuration = {
   mode: "development",
@@ -27,13 +26,6 @@ const config: Configuration = {
           to: "",
         },
       ],
-    }),
-    new WebpackShellPluginNext({
-      onBuildExit: {
-        scripts: ["pnpm manifest"],
-        blocking: true,
-        parallel: false,
-      },
     }),
   ],
   devtool: "source-map",
