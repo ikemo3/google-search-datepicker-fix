@@ -23,19 +23,7 @@ const config: Configuration = {
     new CopyPlugin({
       patterns: [
         {
-          from: "apps/manifest.json",
-          to: "",
-        },
-        {
-          from: "apps/_locales",
-          to: "_locales",
-        },
-        {
-          from: "apps/icons",
-          to: "icons",
-        },
-        {
-          from: "apps/.web-extension-id",
+          from: "public",
           to: "",
         },
       ],

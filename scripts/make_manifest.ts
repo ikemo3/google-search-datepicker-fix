@@ -5,7 +5,7 @@ import { format } from "date-fns";
 // Create if there is no dist directory
 const projectDir = path.dirname(__dirname);
 const distDir = projectDir + "/dist";
-const manifestJsonPath = projectDir + "/apps/manifest.json";
+const manifestJsonPath = projectDir + "/public/manifest.json";
 
 if (!existsSync(distDir)) {
   mkdirSync(distDir);

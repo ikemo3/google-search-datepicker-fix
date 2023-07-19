@@ -24,7 +24,7 @@ function getPackageName(projectDir: string) {
 }
 
 function getExtensionId(projectDir: string) {
-  const extensionIdPath = projectDir + "/apps/.web-extension-id";
+  const extensionIdPath = projectDir + "/public/.web-extension-id";
   const webExtensionId = readFileSync(extensionIdPath).toString();
   return webExtensionId.split("\n")[2];
 }
@@ -42,7 +42,7 @@ async function createFirefoxExtension(packageName: string, projectDir: string) {
   const extensionId = getExtensionId(projectDir);
   console.log(`Extension ID: ${extensionId}`);
 
-  const manifestJsonPath = projectDir + "/apps/manifest.json";
+  const manifestJsonPath = projectDir + "/public/manifest.json";
   const manifestJson = JSON.parse(readFileSync(manifestJsonPath).toString());
   manifestJson.browser_specific_settings = { gecko: { id: extensionId } };
 
@@ -75,7 +75,7 @@ async function main() {
     recursive: true,
   });
   copyFileSync(
-    projectDir + "/apps/.web-extension-id",
+    projectDir + "/public/.web-extension-id",
     projectDir + "/dist-firefox/.web-extension-id",
   );
 
