@@ -1,4 +1,4 @@
-import { ymdToMdy } from "../apps/content_script/google";
+import { ymdToMdy } from "../apps/content_script/dates";
 
 describe("ymdToMdy", () => {
   it("yyyy-mm-dd", () => {
