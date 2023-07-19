@@ -8,9 +8,6 @@ devDependencies:
   '@types/chrome':
     specifier: 0.0.241
     version: 0.0.241
-  '@types/copy-webpack-plugin':
-    specifier: ^10.1.0
-    version: 10.1.0(webpack@5.88.2)
   '@types/jest':
     specifier: ^29.5.3
     version: 29.5.3
@@ -1090,15 +1087,6 @@ packages:
     dependencies:
       '@types/filesystem': 0.0.32
       '@types/har-format': 1.2.10
-    dev: true
-
-  /@types/copy-webpack-plugin@10.1.0(webpack@5.88.2):
-    resolution: {integrity: sha512-Dk0NUW3X6hVQdkH2n9R7NejjPNCocZBiv8XF8Ac5su2d6EKzCcG/yWDwnWGrEsAWvogoADJyUKULwncx0G9Jkg==}
-    deprecated: This is a stub types definition. copy-webpack-plugin provides its own type definitions, so you do not need this installed.
-    dependencies:
-      copy-webpack-plugin: 11.0.0(webpack@5.88.2)
-    transitivePeerDependencies:
-      - webpack
     dev: true
 
   /@types/eslint-scope@3.7.4:
