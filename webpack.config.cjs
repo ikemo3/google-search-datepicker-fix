@@ -1,14 +1,13 @@
-import { Configuration } from "webpack";
-import { join } from "path";
-import CopyPlugin from "copy-webpack-plugin";
+const path = require("path");
+const CopyPlugin = require("copy-webpack-plugin");
 
-const config: Configuration = {
+const config = {
   mode: "development",
   entry: {
-    google: join(__dirname, "apps", "content_script", "google.ts"),
+    google: path.join(__dirname, "apps", "content_script", "google.ts"),
   },
   output: {
-    path: join(__dirname, "dist"),
+    path: path.join(__dirname, "dist"),
     filename: "content_script/[name].js",
     clean: true,
   },
@@ -31,4 +30,4 @@ const config: Configuration = {
   devtool: "source-map",
 };
 
-export default config;
+module.exports = config;

@@ -6,5 +6,5 @@
     "strict": true,
     "target": "es2019"
   },
-  "exclude": ["dist", "node_modules", "webpack.config.ts"]
+  "exclude": ["dist", "node_modules", "webpack.config.cjs"]
 }
