@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 import { ymdToMdy } from "../apps/content_script/dates";
 
 describe("ymdToMdy", () => {
