@@ -1,10 +1,8 @@
 import { configureGhrOption, isError } from "../scripts/libs";
 
 describe("configureGhrOption", () => {
-  test("master branch", () => {
-    expect(
-      configureGhrOption("master", "", "1.0.0", "", "1.0.0"),
-    ).toStrictEqual({
+  test("main branch", () => {
+    expect(configureGhrOption("main", "", "1.0.0", "", "1.0.0")).toStrictEqual({
       tag: "snapshot",
       name: "v1.0.0-snapshot",
       ghrOptions: ["-prerelease", "-recreate"],
