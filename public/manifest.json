@@ -207,7 +207,7 @@
         "https://www.google.cat/search*"
       ],
       "run_at": "document_start",
-      "js": ["content_script/google.js"]
+      "js": ["assets/google.js"]
     }
   ]
 }
