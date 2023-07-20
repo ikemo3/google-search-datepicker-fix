@@ -16,10 +16,10 @@
     "format:prettier": "prettier --write .",
     "format:sort-package-json": "sort-package-json",
     "lint": "pnpm eslint --ext .ts apps test *.ts",
-    "lint:ci": "pnpm format:check && pnpm eslint --format junit --output-file ./reports/eslint/eslint.xml --ext .ts apps test",
+    "lint:ci": "pnpm format:check && pnpm lint:tsc && pnpm eslint --format junit --output-file ./reports/eslint/eslint.xml --ext .ts apps test",
+    "lint:tsc": "tsc --noEmit",
     "test": "jest",
-    "test:ci": "jest --ci --runInBand",
-    "tsc": "tsc"
+    "test:ci": "jest --ci --runInBand"
   },
   "devDependencies": {
     "@types/chrome": "0.0.241",
