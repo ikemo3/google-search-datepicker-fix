@@ -29,7 +29,7 @@
     "@typescript-eslint/parser": "^6.2.1",
     "date-fns": "2.30.0",
     "eslint": "^8.46.0",
-    "eslint-config-prettier": "^8.9.0",
+    "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-node": "^11.1.0",
     "prettier": "^3.0.1",
     "sort-package-json": "^2.5.1",
