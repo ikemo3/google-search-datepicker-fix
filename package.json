@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "license": "MIT",
   "author": "Hideki Ikemoto",
+  "type": "module",
   "scripts": {
     "archive": "tsx ./scripts/archive.ts",
     "build": "pnpm build:vite && pnpm build:manifest",
