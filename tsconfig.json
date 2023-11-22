@@ -3,6 +3,8 @@
     "esModuleInterop": true,
     "module": "es2022",
     "moduleResolution": "bundler",
+    "resolvePackageJsonExports": false,
+    "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "target": "es2022"
