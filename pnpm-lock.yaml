@@ -23,6 +23,9 @@ importers:
       eslint-config-prettier:
         specifier: ^9.1.0
         version: 9.1.0(eslint@8.57.0)
+      eslint-formatter-junit:
+        specifier: ^8.40.0
+        version: 8.40.0
       eslint-plugin-n:
         specifier: ^17.4.0
         version: 17.4.0(eslint@8.57.0)
@@ -627,6 +630,10 @@ packages:
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
+
+  eslint-formatter-junit@8.40.0:
+    resolution: {integrity: sha512-brB5r40UlMbd/BcmPIxUy/UA4GSGkuA1YRTDX4I5mEjra1asxmjUTWetf65JqVMo2kg96ZIZjRutktcHCIy+Gw==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
   eslint-plugin-es-x@7.5.0:
     resolution: {integrity: sha512-ODswlDSO0HJDzXU0XvgZ3lF3lS3XAZEossh15Q2UHjwrJggWeBoKqqEsLTZLXl+dh5eOAozG0zRcYtuE35oTuQ==}
@@ -1885,6 +1892,8 @@ snapshots:
   eslint-config-prettier@9.1.0(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
+
+  eslint-formatter-junit@8.40.0: {}
 
   eslint-plugin-es-x@7.5.0(eslint@8.57.0):
     dependencies:
