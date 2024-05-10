@@ -27,8 +27,8 @@ importers:
         specifier: ^8.40.0
         version: 8.40.0
       eslint-plugin-n:
-        specifier: ^17.4.0
-        version: 17.4.0(eslint@9.2.0)
+        specifier: ^17.6.0
+        version: 17.6.0(eslint@9.2.0)
       eslint-plugin-simple-import-sort:
         specifier: ^12.1.0
         version: 12.1.0(eslint@9.2.0)
@@ -634,8 +634,8 @@ packages:
     peerDependencies:
       eslint: '>=8'
 
-  eslint-plugin-n@17.4.0:
-    resolution: {integrity: sha512-RtgGgNpYxECwE9dFr+D66RtbN0B8r/fY6ZF8EVsmK2YnZxE8/n9LNQhgnkL9z37UFZjYVmvMuC32qu7fQBsLVQ==}
+  eslint-plugin-n@17.6.0:
+    resolution: {integrity: sha512-Y73o88ROwbCtVCCmZjYlYcPYkOG7mIzxxVK1XFRSa2epbKWtAPsmYpAD0pqxg/ZwlcWxMDceQPKHYQi4VIHz7w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.23.0'
@@ -749,9 +749,6 @@ packages:
   get-stream@8.0.1:
     resolution: {integrity: sha512-VaUJspBffn/LMCJVoMvSAdmscJyS1auj5Zulnn5UoYcY531UWmdwhRWkcGKnGU93m5HSXP9LP2usOryrBtQowA==}
     engines: {node: '>=16'}
-
-  get-tsconfig@4.7.2:
-    resolution: {integrity: sha512-wuMsz4leaj5hbGgg4IvDU0bqJagpftG5l5cXIAvo8uZrqn0NJqwtfupTN00VnkQJPcIRrxYrm1Ue24btpCha2A==}
 
   get-tsconfig@4.7.3:
     resolution: {integrity: sha512-ZvkrzoUA0PQZM6fy6+/Hce561s+faD1rsNwhnO5FelNjyy7EMGJ3Rz1AQ8GYDWjhRs/7dBLOEJvhK8MiEJOAFg==}
@@ -1880,13 +1877,13 @@ snapshots:
       eslint: 9.2.0
       eslint-compat-utils: 0.1.2(eslint@9.2.0)
 
-  eslint-plugin-n@17.4.0(eslint@9.2.0):
+  eslint-plugin-n@17.6.0(eslint@9.2.0):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@9.2.0)
       enhanced-resolve: 5.16.0
       eslint: 9.2.0
       eslint-plugin-es-x: 7.5.0(eslint@9.2.0)
-      get-tsconfig: 4.7.2
+      get-tsconfig: 4.7.3
       globals: 15.2.0
       ignore: 5.3.1
       minimatch: 9.0.4
@@ -2033,10 +2030,6 @@ snapshots:
   get-stdin@9.0.0: {}
 
   get-stream@8.0.1: {}
-
-  get-tsconfig@4.7.2:
-    dependencies:
-      resolve-pkg-maps: 1.0.0
 
   get-tsconfig@4.7.3:
     dependencies:
