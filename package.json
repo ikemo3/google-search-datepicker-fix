@@ -26,7 +26,7 @@
     "test:ci": "vitest run"
   },
   "devDependencies": {
-    "@types/chrome": "0.0.267",
+    "@types/chrome": "0.0.268",
     "@types/node": "^20.12.11",
     "date-fns": "3.6.0",
     "eslint": "^9.2.0",
