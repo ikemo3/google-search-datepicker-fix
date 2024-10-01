@@ -21,5 +21,7 @@ export default defineConfig({
     },
   },
   plugins: [],
-  test: {},
+  test: {
+    globals: true,
+  },
 });
