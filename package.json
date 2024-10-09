@@ -34,7 +34,7 @@
     "eslint-formatter-junit": "^8.40.0",
     "eslint-plugin-n": "^17.10.3",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "globals": "^15.10.0",
+    "globals": "^15.11.0",
     "prettier": "^3.3.3",
     "sort-package-json": "^2.10.1",
     "tsx": "^4.19.1",
