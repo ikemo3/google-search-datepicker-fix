@@ -16,7 +16,7 @@ permissions:
   actions: read
 
 env:
-  node-version: "22.13.0"
+  node-version: "22.13.1"
 
 jobs:
   build:
