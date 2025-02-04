@@ -17,6 +17,7 @@ permissions:
 
 env:
   node-version: "22.13.1"
+  pnpm-version: "9.15.4"
 
 jobs:
   build:
@@ -25,8 +26,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: enable corepack
-        run: corepack enable
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.pnpm-version }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
