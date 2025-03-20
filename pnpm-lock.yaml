@@ -57,8 +57,8 @@ importers:
         specifier: ^3.0.9
         version: 3.0.9(@types/node@22.13.10)(tsx@4.19.3)
       zip-a-folder:
-        specifier: 3.1.8
-        version: 3.1.8
+        specifier: 3.1.9
+        version: 3.1.9
 
 packages:
 
@@ -836,8 +836,8 @@ packages:
     engines: {node: '>=16 || 14 >=14.18'}
     hasBin: true
 
-  glob@11.0.0:
-    resolution: {integrity: sha512-9UiX/Bl6J2yaBbxKoEBRm4Cipxgok8kQYcOPEhScPwebu2I0HoQOuYdIO6S3hLuWoZgpDpwQZMzTFxgpkyT76g==}
+  glob@11.0.1:
+    resolution: {integrity: sha512-zrQDm8XPnYEKawJScsnM0QzobJxlT/kHOOlRTio8IH/GrmxRE5fjllkzdaHclIuNjUQTJYH2xHNIGfdpJkDJUw==}
     engines: {node: 20 || >=22}
     hasBin: true
 
@@ -1366,8 +1366,8 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
-  zip-a-folder@3.1.8:
-    resolution: {integrity: sha512-P8PrFMSWe+U9roaZ3MNc/cYWc3JejfJVWz0u7nGbp60C2ZtdswJVtyHjAL60V9314KI0uQN8RasgrV3yr324Hg==}
+  zip-a-folder@3.1.9:
+    resolution: {integrity: sha512-0TPP3eK5mbZxHnOE8w/Jg6gwxsxZOrA3hXHMfC3I4mcTvyJwNt7GZP8i6uiAMVNu43QTmVz0ngEMKcjgpLZLmQ==}
 
   zip-stream@6.0.1:
     resolution: {integrity: sha512-zK7YHHz4ZXpW89AHXUPbQVGKI7uvkd3hzusTdotCg1UxyaVtg0zFJSTfW/Dq5f7OBBVnq6cZIaC8Ti4hb6dtCA==}
@@ -2103,7 +2103,7 @@ snapshots:
       minipass: 7.1.2
       path-scurry: 1.11.1
 
-  glob@11.0.0:
+  glob@11.0.1:
     dependencies:
       foreground-child: 3.1.1
       jackspeak: 4.0.2
@@ -2593,10 +2593,10 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zip-a-folder@3.1.8:
+  zip-a-folder@3.1.9:
     dependencies:
       archiver: 7.0.1
-      glob: 11.0.0
+      glob: 11.0.1
       is-glob: 4.0.3
 
   zip-stream@6.0.1:
