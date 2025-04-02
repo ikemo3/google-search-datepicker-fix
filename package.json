@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@types/chrome": "0.0.313",
-    "@types/node": "^22.13.17",
+    "@types/node": "^22.14.0",
     "date-fns": "4.1.0",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
