@@ -29,7 +29,7 @@
     "@types/chrome": "0.0.322",
     "@types/node": "^22.15.18",
     "date-fns": "4.1.0",
-    "eslint": "^9.26.0",
+    "eslint": "^9.27.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-formatter-junit": "^8.40.0",
     "eslint-plugin-n": "^17.18.0",
