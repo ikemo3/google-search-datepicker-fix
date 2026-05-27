@@ -17,7 +17,7 @@ permissions:
 
 env:
   node-version: "24.16.0"
-  pnpm-version: "11.2.2"
+  pnpm-version: "11.3.0"
 
 jobs:
   build:
