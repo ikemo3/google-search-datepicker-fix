@@ -39,8 +39,8 @@ importers:
         specifier: ^3.8.3
         version: 3.8.3
       sort-package-json:
-        specifier: ^3.6.1
-        version: 3.6.1
+        specifier: ^3.7.0
+        version: 3.7.0
       tsx:
         specifier: ^4.22.4
         version: 4.22.4
@@ -957,9 +957,9 @@ packages:
   sort-object-keys@2.1.0:
     resolution: {integrity: sha512-SOiEnthkJKPv2L6ec6HMwhUcN0/lppkeYuN1x63PbyPRrgSPIuBJCiYxYyvWRTtjMlOi14vQUCGUJqS6PLVm8g==}
 
-  sort-package-json@3.6.1:
-    resolution: {integrity: sha512-Chgejw1+10p2D0U2tB7au1lHtz6TkFnxmvZktyBCRyV0GgmF6nl1IxXxAsPtJVsUyg/fo+BfCMAVVFUVRkAHrQ==}
-    engines: {node: '>=20'}
+  sort-package-json@3.7.0:
+    resolution: {integrity: sha512-/Xx1zmdiImiBNKox5E4r9QTV/KuqycvtokxouII9Wd4TQcsIzs2PsXr8hJyS4QyA8iAtBTsEJXMSsy9Z42Z7aw==}
+    engines: {node: '>=22'}
     hasBin: true
 
   source-map-js@1.2.1:
@@ -982,10 +982,6 @@ packages:
   tinyexec@1.0.2:
     resolution: {integrity: sha512-W/KYk+NFhkmsYpuHq5JykngiOCnxeVL8v8dFnqxSD8qEEdRfXk1SDM6JzNqcERbcGYj9tMrDQBYV9cjgnunFIg==}
     engines: {node: '>=18'}
-
-  tinyglobby@0.2.15:
-    resolution: {integrity: sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==}
-    engines: {node: '>=12.0.0'}
 
   tinyglobby@0.2.16:
     resolution: {integrity: sha512-pn99VhoACYR8nFHhxqix+uvsbXineAasWm5ojXoN8xEwK5Kd3/TrhNn1wByuD52UxWRLy8pu+kRMniEi6Eq9Zg==}
@@ -1921,7 +1917,7 @@ snapshots:
 
   sort-object-keys@2.1.0: {}
 
-  sort-package-json@3.6.1:
+  sort-package-json@3.7.0:
     dependencies:
       detect-indent: 7.0.2
       detect-newline: 4.0.1
@@ -1929,7 +1925,7 @@ snapshots:
       is-plain-obj: 4.1.0
       semver: 7.7.3
       sort-object-keys: 2.1.0
-      tinyglobby: 0.2.15
+      tinyglobby: 0.2.17
 
   source-map-js@1.2.1: {}
 
@@ -1942,11 +1938,6 @@ snapshots:
   tinybench@2.9.0: {}
 
   tinyexec@1.0.2: {}
-
-  tinyglobby@0.2.15:
-    dependencies:
-      fdir: 6.5.0(picomatch@4.0.4)
-      picomatch: 4.0.4
 
   tinyglobby@0.2.16:
     dependencies:
