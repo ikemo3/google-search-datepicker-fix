@@ -1,6 +1,0 @@
-coverage
-dist
-dist-chrome
-dist-firefox
-*.md
-pnpm-lock.yaml
